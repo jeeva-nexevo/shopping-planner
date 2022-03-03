@@ -1,0 +1,20 @@
+.card_width {
+    width: 18rem;
+    height: 350px;
+}
+
+.card_top {
+    margin-top: 100px!important;
+}
+
+.email_label{
+    margin-left: -400px;
+}
+
+.background_color_resetpassword {
+    background-color: rgb(238, 130, 238);
+}
+/* .card_bg_color{
+    background-color:rgb(238, 130, 238)!important;
+} */
+
