@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 function Edit({ details, deleteDetail }) {
+
+    const params = useParams()
+
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
+
+    const id = params.id
+    const product_details = JSON.parse(localStorage.getItem("detail"))
+    const product_detail = product_details[id]
+    console.log(product_detail)
 
     const handleEdit = id => {
         const employee = details[id]
@@ -27,7 +36,7 @@ function Edit({ details, deleteDetail }) {
                                 className="form-control"
                                 required
                                 onChange={e => setName(e.target.value)}
-                                value={name}
+                                value={product_detail.name}
                             ></input>
                             <br /> <br />
                             <label className='h4'>Quantity</label>
@@ -36,7 +45,7 @@ function Edit({ details, deleteDetail }) {
                                 className="form-control"
                                 required
                                 onChange={e => setQuantity(e.target.value)}
-                                value={quantity}
+                                value={product_detail.quantity}
                             ></input>
                             <br /> <br />
                             <label className='h4'>Price</label>
@@ -45,7 +54,7 @@ function Edit({ details, deleteDetail }) {
                                 className="form-control"
                                 required
                                 onChange={e => setPrice(e.target.value)}
-                                value={price}
+                                value={product_detail.price}
                             ></input>
                             <br /> <br />
                             <button
@@ -55,7 +64,7 @@ function Edit({ details, deleteDetail }) {
                             >
                                 Submit
                             </button>
-                            {localStorage.getItem('Name') && (
+                            {/* {localStorage.getItem('Name') && (
                                 <div>
                                     Name: <p>{localStorage.getItem('Name')}</p>
                                 </div>
@@ -69,7 +78,7 @@ function Edit({ details, deleteDetail }) {
                                 <div>
                                     Price: <p>{localStorage.getItem('Price')}</p>
                                 </div>
-                            )}
+                            )} */}
                         </div>
                     </div>
                 </div>

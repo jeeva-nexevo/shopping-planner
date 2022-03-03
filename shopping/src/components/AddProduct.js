@@ -318,29 +318,29 @@ import Data from './data';
 import './AddProduct.css';
 import Header from './Header';
 
-const getDatafromLS = () => {
-    const data = localStorage.getItem('details');
-    if (data) {
-        return JSON.parse(data);
-    } else {
-        return [];
-    }
-};
+// const getDatafromLS = () => {
+//     const data = localStorage.getItem('details');
+//     if (data) {
+//         return JSON.parse(data);
+//     } else {
+//         return [];
+//     }
+// };
 
 function AddProduct() {
-    const [details, setdetails] = useState(getDatafromLS());
+    const [details, setdetails] = useState([]);
 
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
 
-    const handle = () => {
-        localStorage.setItem('Name', name);
-        localStorage.setItem('Quantity', quantity);
-        localStorage.setItem('Price', price)
-     };
+    useEffect(() => {
+        setdetails(JSON.parse(localStorage.getItem('detail')))
+        // localStorage.setItem('detail', JSON.stringify(details));
+    }, [])
 
     const handleDetailsSubmit = e => {
+        console.log("Add")
         e.preventDefault();
 
         let detail = {
@@ -349,6 +349,9 @@ function AddProduct() {
             price,
         };
         setdetails([...details, detail]);
+        let newDetails = JSON.parse(localStorage.getItem("detail"))
+        newDetails.push(detail)
+        localStorage.setItem("detail", JSON.stringify(newDetails))
         setName('');
         setQuantity('');
         setPrice('');
@@ -360,6 +363,7 @@ function AddProduct() {
         });
         setdetails(filteredDetails);
     };
+    
 
     // const handleEdit = e => {
     //     const employee = this.state.employees.find(function (emp) {
@@ -375,14 +379,11 @@ function AddProduct() {
     //     });
     // };
 
-    useEffect(() => {
-        localStorage.setItem('detail', JSON.stringify(details));
-    }, [details]);
 
     return (
-        <div>
+        <div className=''>
             <Header />
-            <div className='background_color_resetpassword '>
+            <div className='background_color_resetpassword container'>
                 <div className="row align-items-center">
                     <div className="card col-4 mx-auto card_top card_bg_color">
                         <div className="card-body card_bg_color">
@@ -415,13 +416,7 @@ function AddProduct() {
                                 value={price}
                             ></input>
                             <br /> <br />
-                            <button
-                                type="button"
-                                className="btn btn-primary"
-                                onClick={handleDetailsSubmit}
-                            >
-                                Submit
-                            </button>
+                            <button type="button" className="btn btn-primary" onClick={handleDetailsSubmit}>Submit</button>
                         </div>
                     </div>
                 </div>

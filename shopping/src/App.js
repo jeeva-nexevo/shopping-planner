@@ -24,7 +24,7 @@ function App() {
           <Route path="/header">
             <Header />
           </Route>
-          <Route path="/Edit">
+          <Route path="/Edit/:id">
             <Edit />
           </Route>
         </Switch>
