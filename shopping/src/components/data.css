@@ -1,0 +1,13 @@
+.total_left {
+    margin-right: -100px;
+}
+
+.card_top {
+    margin-top: 150px;
+}
+
+
+.strike{
+    text-decoration: line-through;
+    text-decoration-color: #007bff;;
+}

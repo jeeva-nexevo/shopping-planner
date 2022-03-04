@@ -1,4 +1,8 @@
 .bg_color_header {
-    background-color: blueviolet;
+    background-color: antiquewhite!important;
+
+}
+.text_color {
+    border-radius: 30%;
 }
 

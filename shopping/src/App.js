@@ -5,6 +5,7 @@ import AddProduct from './components/AddProduct';
 import Header from './components/Header';
 import Data from './components/data';
 import Edit from './components/Edit';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/Edit/:id">
             <Edit />
+          </Route>
+          <Route path="/footer">
+            <Footer />
           </Route>
         </Switch>
       </Router>

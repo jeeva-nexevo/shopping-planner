@@ -5,7 +5,7 @@ import AddProduct from './AddProduct';
 
 function Home() {
     return (
-        <div className="">
+        <div className="bg_color">
             <div className="container">
                 <div className="d-flex justify-content-end">
                     <Link to="/AddProduct">

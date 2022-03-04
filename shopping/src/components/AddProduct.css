@@ -12,9 +12,13 @@
 }
 
 .background_color_resetpassword {
-    background-color: rgb(238, 130, 238);
+    background-color: darkslateblue;;
 }
 /* .card_bg_color{
     background-color:rgb(238, 130, 238)!important;
 } */
+
+.bg_top {
+    margin-top: -23px;
+}
 

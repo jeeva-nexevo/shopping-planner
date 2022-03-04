@@ -317,6 +317,7 @@ import React, { useState, useEffect } from 'react';
 import Data from './data';
 import './AddProduct.css';
 import Header from './Header';
+import Footer from './Footer';
 
 // const getDatafromLS = () => {
 //     const data = localStorage.getItem('details');
@@ -363,7 +364,7 @@ function AddProduct() {
         });
         setdetails(filteredDetails);
     };
-    
+
 
     // const handleEdit = e => {
     //     const employee = this.state.employees.find(function (emp) {
@@ -383,8 +384,8 @@ function AddProduct() {
     return (
         <div className=''>
             <Header />
-            <div className='background_color_resetpassword container'>
-                <div className="row align-items-center">
+            <div className='background_color_resetpassword container mt-4'>
+                <div className="row align-items-center bg_top">
                     <div className="card col-4 mx-auto card_top card_bg_color">
                         <div className="card-body card_bg_color">
                             <h2>Add Product</h2>
@@ -425,9 +426,10 @@ function AddProduct() {
                 <br />
                 <div className="view-container">
                     <div className="table-responsive">
-                        <table className="table">
+                        <table className="table table-bordered table-dark">
                             <thead>
                                 <tr>
+                                    <td>Checkbox</td>
                                     <th>Name</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
@@ -443,6 +445,7 @@ function AddProduct() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
